@@ -1,43 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
-
-$colors: #ff8c00, #ff69b4, #1e90ff, #00ced1, #32cd32, #ffa07a;
-
-body {
-  font-family: 'Roboto Slab', serif;
-}
-
-.row {
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+.container {
+  position: relative;
+  width: 100%;
+  height: 760px;
+  background-color: #ace4e3;
   display: flex;
-  justify-content: space-around;
-}
+  justify-content: center;
+  align-items: center;
 
-.block {
-  flex: 0 0 calc(33.33% - 20px);
-  border: 5px solid black;
-  padding: 20px;
-  text-align: center;
-  
-  &__title {
-    font-size: 24px;
-    margin-bottom: 10px;
+  .title {
+    font-size: 72px;
+    color: #003e29;
+    font-family: 'Modak', cursive;
   }
-  
-  &__text {
-    margin-bottom: 20px;
+
+  .corner-photo {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    transition: transform 0.3s ease; 
+
+    &.top-left {
+      top: 0;
+      left: 0;
+    }
+
+    &.top-right {
+      top: 0;
+      right: 0;
+    }
+
+    &.bottom-left {
+      bottom: 0;
+      left: 0;
+    }
+
+    &.bottom-right {
+      bottom: 0;
+      right: 0;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
-  
-  &__button {
+
+  .burger-menu-btn {
+    position: absolute;
+    top: 50%;
+    right: 20px; 
+    transform: translateY(-50%); 
     display: flex;
-    padding: 10px 20px;
-    margin-bottom: 10px;
-    border: 3px solid black;
-    background-color: white;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
     cursor: pointer;
-  }
-}
+    background: transparent;
+    border: none;
+    padding: 0;
+    z-index: 2;
 
-@for $i from 1 through 6 {
-  .block:nth-child(#{$i}) {
-    background-color: nth($colors, $i);
+    span {
+      width: 100%;
+      height: 2px;
+      background-color: #003e29;
+      transition: all 0.3s ease;
+    }
   }
-}
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 770px; 
+    background-color: #003e29; 
+    z-index: 1;
+    transition: all 0.3s ease;
+
+    &.active {
+      right: 0;
+    }
+  }
+  .burger-menu {
+    text-align: center; 
+   
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+          font-family: 'Modak', cursive;
+            font-size: 110px;
+            margin-bottom: 5px;
+            color: #e7e6ad;
+            transition: color 0.3s ease;
+            
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &:hover {
+              color: #ace4e3;
+          }
+        }
+    }
+  }
+  }

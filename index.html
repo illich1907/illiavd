@@ -1,60 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SCSS & BEM Page</title>
-  <link rel="stylesheet" href="/styles/app.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Заголовок</title>
+<link rel="stylesheet" href="/styles/app.css">
 </head>
 <body>
-  <div class="row">
-    <div class="block">
-        <h6 class="block__title">R.I.P. (1234)</h6>
-      <h2 class="block__title">Block 1</h2>
-      <p class="block__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <button class="block__button">Button</button>
+
+    <div class="container">
+        <button class="burger-menu-btn" onclick="toggleSidebar()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    
+        <div class="sidebar">
+            <div class="burger-menu">
+                <ul>
+                    <li>1 The Figures 2 The Myths</li>
+                    <li>3 The Signs 4 The Help</li>
+                </ul>
+            </div>
+        </div>
+    
+        <a href="https://css-tricks.com/sdgd">
+            <img src="/images/tl.svg" alt="Фото" class="corner-photo top-left">
+            <img src="/images/tr.svg" alt="Фото" class="corner-photo top-right">
+            <img src="/images/bl.svg" alt="Фото" class="corner-photo bottom-left">
+            <img src="/images/br.svg" alt="Фото" class="corner-photo bottom-right">
+        </a>
+    
+        <h1 class="title">World Suicide Prevention Day</h1>
     </div>
-    <div class="block">
-        
-      <h6 class="block__title">R.I.P. (1234)</h6>
-      <h2 class="block__title">Block 2</h2>
-      <p class="block__text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <button class="block__button">Button</button>
-      <button class="block__button">Button</button>
-    </div>
-    <div class="block">
-        <h2 class="block__title">Block 3</h2>
-        <p class="block__text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button id="youtubeButton" class="block__button">обзор на папку</button>
-      </div>
-  </div>
-  <div class="row">
-    <div class="block">
-      <h2 class="block__title">Block 4</h2>
-      <p class="block__text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      <button class="block__button">Button</button>
-      <button class="block__button">Button</button>
-    </div>
-    <div class="block">
-      <h2 class="block__title">Block 5</h2>
-      <p class="block__text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <button class="block__button">Button</button>
-    </div>
-    <div class="block">
-        <h6 class="block__title">R.I.P. (1234)</h6>
-      <h2 class="block__title">Block 6</h2>
-      <p class="block__text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-      <button class="block__button">Button</button>
-      <button class="block__button">Button</button>
-    </div>
-  </div>
-  <script>document.addEventListener("DOMContentLoaded", function() {
-    var youtubeButton = document.getElementById("youtubeButton");
-    if (youtubeButton) {
-      youtubeButton.addEventListener("click", function() {
-        window.location.href = "https://www.youtube.com/watch?v=5QZcOugHQ6s";
-      });
-    }
-  });</script>
+
+<script>
+function toggleSidebar() {
+    var sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+}
+</script>
+
 </body>
 </html>
